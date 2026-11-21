@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Fantasma da Placa Mãe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-inner">
+      <div>
+        <p class="etiqueta">Arquitetura Computacional · Sprint 3</p>
+        <h1>O Fantasma da Placa Mãe</h1>
+      </div>
+      <nav class="menu">
+        <a href="cruzadinha.html">Cruzadinha</a>
+        <a href="portas.html">Quiz do fantasma</a>
+        <a href="ritmo.html">Jogo de ritmo</a>
+        <a href="dicionario.html">Dicionário</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="home">
+    <section class="painel hero hero-grande">
+      <div class="fantasma fantasma-gigante" aria-hidden="true">
+        <div class="fantasma-aura"></div>
+        <div class="fantasma-corpo">
+          <span class="olho esquerdo"></span>
+          <span class="olho direito"></span>
+          <span class="boca"></span>
+        </div>
+        <div class="fantasma-cauda cauda-um"></div>
+        <div class="fantasma-cauda cauda-dois"></div>
+        <div class="fantasma-cauda cauda-tres"></div>
+      </div>
+      <div class="hero-texto">
+        <p class="etiqueta">Uma aventura de arquitetura computacional</p>
+        <h2>Ele tomou conta da placa mãe!</h2>
+        <p class="subtitulo">O fantasma bagunçou as portas lógicas, os clocks e a memória, além de embaralhar os termos da aula. Enfrente o quiz, derrote o fantasma no jogo de ritmo e complete a cruzadinha.</p>
+
+        <div class="acoes-grandes">
+          <a class="botao-grande botao-fantasma" href="portas.html">
+            <span class="botao-grande-icone">👻</span>
+            <span class="botao-grande-texto">
+              <strong>Derrotar o fantasma</strong>
+              <small>Quiz + jogo de ritmo</small>
+            </span>
+            <span class="botao-grande-seta">→</span>
+          </a>
+          <a class="botao-grande botao-cruzadinha" href="cruzadinha.html">
+            <span class="botao-grande-icone">✏️</span>
+            <span class="botao-grande-texto">
+              <strong>Jogar cruzadinha</strong>
+              <small>12 termos e pistas da aula</small>
+            </span>
+            <span class="botao-grande-seta">→</span>
+          </a>
+        </div>
+        <p class="link-extra"><a href="dicionario.html">Estudar no Dicionário da cruzadinha</a></p>
+      </div>
+    </section>
+
+    <section class="painel status status-final">
+      <h2>Seu progresso</h2>
+      <div class="status-grid">
+        <div class="status-item">
+          <span class="status-label">Vidas</span>
+          <span id="coracoes" class="coracoes"></span>
+          <strong id="total-vidas">3</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Quiz do fantasma</span>
+          <strong id="status-portas">Pendente</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Computador</span>
+          <strong id="status-pc">Desligado</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Jogo de ritmo</span>
+          <strong id="status-ritmo">Pendente</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Cruzadinha</span>
+          <strong id="status-cruzadinha">Pendente</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Fantasma</span>
+          <strong id="status-fantasma">Solto pela placa</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">Vitórias</span>
+          <strong id="status-vitorias">0</strong>
+        </div>
+      </div>
+      <p class="ajuda">Você começa com 3 vidas. Na cruzadinha, só perde vida se escrever uma letra errada e clicar em Conferir — casas em branco não custam nada, e letras que existem na palavra mas estão no lugar errado ficam amarelas. Seu progresso fica salvo até derrotar o fantasma. No quiz, acerte a pergunta de clock em 20 segundos para liberar a vitória no jogo de ritmo. Cada vitória fica registrada em Vitórias e o quiz é resetado para uma nova rodada.</p>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <span>O Fantasma da Placa Mãe · Arquitetura Computacional</span>
+    <a href="dicionario.html">Ver dicionário</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

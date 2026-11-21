@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cruzadinha · O Fantasma da Placa Mãe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pagina-cruzadinha">
+  <header class="topo">
+    <div class="topo-inner">
+      <div>
+        <p class="etiqueta">O Fantasma da Placa Mãe · Cruzadinha</p>
+        <h1>Cruzadinha</h1>
+        <p class="subtitulo">Leia a pista e escreva as letras direto nas casas. Cuidado: conferir com letra errada custa 1 vida.</p>
+      </div>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="portas.html">Quiz do fantasma</a>
+        <a href="ritmo.html">Jogo de ritmo</a>
+        <a href="dicionario.html">Dicionário da cruzadinha</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="painel tabuleiro-painel">
+      <div class="barra">
+        <h2>Tabuleiro</h2>
+        <div class="acoes">
+          <span class="vidas"><span class="vidas-titulo">Vidas:</span> <span id="coracoes" class="coracoes"></span></span>
+          <span id="contador" class="contador">0 de 12 palavras</span>
+          <button type="button" id="conferir" class="botao primario">Conferir</button>
+          <button type="button" id="reiniciar" class="botao secundario">Reiniciar</button>
+        </div>
+      </div>
+
+      <div class="tabuleiro-wrapper">
+        <div id="tabuleiro" class="tabuleiro" aria-label="Tabuleiro da cruzadinha"></div>
+      </div>
+
+      <p id="mensagem" class="mensagem" role="status"></p>
+      <p class="ajuda">Setas do teclado andam pelas casas. <strong>Verde</strong>: letra certa no lugar certo. <strong>Amarelo</strong>: a letra existe na palavra, mas está no lugar errado. <strong>Vermelho</strong>: letra que não pertence à palavra. Casas vazias não tiram vida; só uma letra errada confirmada no Conferir.</p>
+    </section>
+
+    <section class="painel pistas-painel">
+      <h2>Pistas</h2>
+      <div class="grupos">
+        <div class="grupo">
+          <h3>Horizontais</h3>
+          <ol id="pistas-h" class="lista-pistas"></ol>
+        </div>
+        <div class="grupo">
+          <h3>Verticais</h3>
+          <ol id="pistas-v" class="lista-pistas"></ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <span>12 palavras · todas cruzadas entre si</span>
+    <a href="index.html">Voltar à home</a>
+  </footer>
+
+  <div id="overlay" class="overlay" hidden>
+    <div class="overlay-card">
+      <h2 id="overlay-titulo"></h2>
+      <p id="overlay-texto"></p>
+      <div class="overlay-acoes">
+        <button type="button" id="overlay-principal" class="botao primario"></button>
+        <a class="botao secundario link-botao" href="index.html">Voltar à home</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

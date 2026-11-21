@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz do Fantasma · O Fantasma da Placa Mãe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-inner">
+      <div>
+        <p class="etiqueta">O Fantasma da Placa Mãe · Quiz do fantasma</p>
+        <h1>Quiz do Fantasma</h1>
+        <p class="subtitulo">O fantasma desorganizou a placa mãe. Responda 7 perguntas, uma de cada vez. O resultado só aparece no final.</p>
+      </div>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="cruzadinha.html">Cruzadinha</a>
+        <a href="ritmo.html">Jogo de ritmo</a>
+        <a href="dicionario.html">Dicionário da cruzadinha</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="portas-layout">
+    <section class="painel computador-painel">
+      <h2>Placa mãe</h2>
+      <div id="computador" class="computador">
+        <div class="monitor">
+          <div class="tela"><span id="texto-tela">SEM ENERGIA</span></div>
+          <div class="suporte"></div>
+        </div>
+        <div class="gabinete">
+          <span class="led"></span>
+          <span class="ventoinha"></span>
+        </div>
+      </div>
+      <p id="status-energia" class="status-energia" role="status">Responda às 7 perguntas para ligar o computador.</p>
+      <p id="tentativas" class="status-energia">Tentativas: 0</p>
+      <div id="recompensa" class="recompensa" hidden>
+        <strong id="recompensa-titulo">Computador ligado!</strong>
+        <span id="recompensa-texto">Você ganhou vidas extras para a cruzadinha.</span>
+        <a class="botao primario link-botao" href="ritmo.html">Derrotar o fantasma no ritmo</a>
+        <a class="botao secundario link-botao" href="cruzadinha.html">Ir para a cruzadinha</a>
+      </div>
+      <p class="ajuda">Durante as perguntas não aparece certo ou errado: responda tudo e clique em <strong>Finalizar quiz</strong> para ver o resultado. Se errar, use <strong>Limpar tudo</strong> para desligar o computador e refazer.</p>
+    </section>
+
+    <section class="painel quiz-painel">
+      <h2>Perguntas do quiz</h2>
+      <p class="intro">3 conjuntos de portas lógicas, 2 contas de clock, 1 ordem de memória e 1 pergunta relâmpago.</p>
+
+      <div id="puzzles" class="puzzles"></div>
+      <div id="clocks" class="clock-cards"></div>
+      <div id="memoria-puzzle" class="puzzle"></div>
+
+      <div id="clock-relampago" class="relampago etapa-quiz" data-etapa="6">
+        <h3>Pergunta relâmpago de clock</h3>
+        <p id="relampago-enunciado">1 GHz equivale a quantos MHz?</p>
+        <div class="relampago-opcoes">
+          <button type="button" class="opcao-relampago" data-resposta="100 MHz" disabled>100 MHz</button>
+          <button type="button" class="opcao-relampago" data-resposta="1000 MHz" disabled>1000 MHz</button>
+          <button type="button" class="opcao-relampago" data-resposta="10 MHz" disabled>10 MHz</button>
+        </div>
+        <div class="relampago-controle">
+          <span class="relampago-cronometro">Tempo: <strong id="relampago-tempo">20</strong>s</span>
+          <button type="button" id="relampago-iniciar" class="botao primario">Começar pergunta</button>
+        </div>
+        <p id="relampago-status" class="status-energia">Você terá 20 segundos para responder. O resultado aparece no final.</p>
+      </div>
+
+      <div class="quiz-navegacao">
+        <button type="button" id="quiz-anterior" class="botao secundario">Anterior</button>
+        <span id="quiz-progresso" class="quiz-progresso">Pergunta 1 de 7</span>
+        <button type="button" id="quiz-proxima" class="botao primario">Próxima</button>
+        <button type="button" id="enviar" class="botao primario" hidden>Finalizar quiz</button>
+      </div>
+
+      <div class="quiz-acoes">
+        <button type="button" id="limpar-tudo" class="botao secundario">Limpar tudo</button>
+        <button type="button" id="reiniciar-quiz" class="botao secundario">Reiniciar quiz (novo jogo)</button>
+      </div>
+    </section>
+
+    <section id="explicacao" class="painel explicacao" hidden>
+      <h2>Computador ligado: o que você consertou</h2>
+      <div class="explicacao-grid">
+        <div>
+          <h3>Portas lógicas</h3>
+          <ul>
+            <li><strong>AND</strong>: só passa energia se as duas entradas forem 1 (1 e 1 → 1).</li>
+            <li><strong>OR</strong>: passa se pelo menos uma entrada for 1 (1 ou 0 → 1).</li>
+            <li><strong>NOT</strong>: inverte a entrada (0 vira 1 e 1 vira 0).</li>
+            <li><strong>XOR</strong>: passa só quando as entradas são diferentes (1 e 0 → 1).</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Resultado das contas de clock</h3>
+          <ul>
+            <li><strong>Conta 1</strong>: período de 0,5 ns → f = 1 / 0,5 ns = <strong>2 GHz</strong> (menor valor que atende).</li>
+            <li><strong>Conta 2</strong>: 4 ciclos × 750 milhões de instruções/s = 3 bilhões de ciclos/s = <strong>3 GHz</strong>.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Ordem do armazenamento</h3>
+          <p>Da mais lenta para a mais rápida: <strong>RAM → CACHE → REGISTRADORES</strong>.</p>
+          <p>A RAM é a memória principal, a cache guarda cópias dos dados mais usados e os registradores ficam dentro da CPU.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <span>7 perguntas · até 2 vidas extras · o fantasma pode bagunçar tudo de novo</span>
+    <a href="index.html">Voltar à home</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

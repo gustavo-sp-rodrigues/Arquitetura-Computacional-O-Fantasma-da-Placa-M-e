@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Ritmo · O Fantasma da Placa Mãe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-inner">
+      <div>
+        <p class="etiqueta">O Fantasma da Placa Mãe · Jogo de ritmo</p>
+        <h1>Acertes o fantasma!</h1>
+        <p class="subtitulo">Depois do quiz, o fantasma fugiu para a tela. Clique nele cada vez que aparecer antes que ele mude de lugar.</p>
+      </div>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="portas.html">Quiz do fantasma</a>
+        <a href="cruzadinha.html">Cruzadinha</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="ritmo-layout">
+    <section class="painel ritmo-painel">
+      <h2>Como jogar</h2>
+      <ol class="ritmo-regras">
+        <li>Clique em <strong>Começar</strong> para iniciar o ritmo.</li>
+        <li>O fantasma aparece em uma casa e some rapidamente.</li>
+        <li>Clique <strong>exatamente onde ele aparecer</strong> para acertar.</li>
+        <li>Acerte <strong>10 vezes</strong> antes do tempo acabar para derrotá-lo.</li>
+      </ol>
+      <div class="ritmo-stats">
+        <div class="ritmo-stat">
+          <span class="status-label">Acertos</span>
+          <strong><span id="ritmo-acertos">0</span>/10</strong>
+        </div>
+        <div class="ritmo-stat">
+          <span class="status-label">Tempo</span>
+          <strong><span id="ritmo-tempo">30</span>s</strong>
+        </div>
+      </div>
+      <div class="ritmo-barra"><div id="ritmo-barra-preenchida" class="ritmo-barra-preenchida"></div></div>
+      <p id="ritmo-status" class="status-energia" role="status">Pronto para começar?</p>
+      <button type="button" id="ritmo-iniciar" class="botao primario botao-largo">Começar</button>
+      <p class="ajuda">O fantasma fica mais rápido a cada acerto. Se o tempo acabar, você pode tentar de novo. Seu progresso no quiz fica salvo.</p>
+    </section>
+
+    <section class="painel palco-painel">
+      <h2>Palco do fantasma</h2>
+      <div id="palco-ritmo" class="palco-ritmo" aria-label="Palco do jogo de ritmo"></div>
+      <div id="ritmo-resultado" class="recompensa ritmo-resultado" hidden>
+        <strong id="ritmo-resultado-titulo">Fantasma derrotado!</strong>
+        <span id="ritmo-resultado-texto">Você acertou todas as aparições.</span>
+        <a class="botao primario link-botao" href="cruzadinha.html">Jogar cruzadinha</a>
+        <a class="botao secundario link-botao" href="index.html">Voltar à home</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <span>Quiz → ritmo → cruzadinha</span>
+    <a href="index.html">Voltar à home</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
